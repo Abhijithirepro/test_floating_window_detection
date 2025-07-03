@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Element Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔍 Floating Element Detector</h1>
+        <p>This tool detects floating icons, sidebars, and overlays injected into the DOM</p>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2>Controls</h2>
+            <div class="button-group">
+                <button id="startDetection" class="btn-primary">Start Detection</button>
+                <button id="stopDetection" class="btn-secondary">Stop Detection</button>
+                <button id="clearResults" class="btn-clear">Clear Results</button>
+                <button id="simulateFloating" class="btn-simulate">Simulate Floating Element</button>
+            </div>
+            
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="detectPosition" checked>
+                    Detect positioned elements (fixed, absolute, sticky)
+                </label>
+                <label>
+                    <input type="checkbox" id="detectHighZIndex" checked>
+                    Detect high z-index elements (>100)
+                </label>
+                <label>
+                    <input type="checkbox" id="detectOverflow" checked>
+                    Detect elements outside viewport
+                </label>
+            </div>
+        </section>
+
+        <section class="results">
+            <h2>Detected Elements <span id="elementCount">(0)</span></h2>
+            <div id="detectedElements" class="element-list">
+                <p class="no-results">No floating elements detected yet. Click "Start Detection" to begin monitoring.</p>
+            </div>
+        </section>
+
+        <section class="stats">
+            <h2>Detection Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDetected">0</div>
+                    <div class="stat-label">Total Detected</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="fixedElements">0</div>
+                    <div class="stat-label">Fixed Position</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="absoluteElements">0</div>
+                    <div class="stat-label">Absolute Position</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="highZIndexElements">0</div>
+                    <div class="stat-label">High Z-Index</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Monitor console for detailed detection logs</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
